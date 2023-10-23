@@ -12,7 +12,6 @@ const testData = [
   { id: 6, name: "Cookies", category: "Dessert" },
 ];
 
-// Filter
 const noop = () => {};
 test("uses a prop of 'search' to display the search term in the input field", () => {
   render(<Filter search="testing" onSearchChange={noop} />);
@@ -41,7 +40,6 @@ test("the input field acts as a controlled input", () => {
   expect(screen.queryByPlaceholderText(/Search/).value).toBe("testing 123");
 });
 
-// Shopping List
 test("the shopping list displays all items when initially rendered", () => {
   const { container } = render(<ShoppingList items={testData} />);
   expect(container.querySelector(".Items").children).toHaveLength(
